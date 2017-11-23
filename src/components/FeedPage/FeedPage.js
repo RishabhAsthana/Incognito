@@ -2,16 +2,13 @@ import React, { Component } from 'react';
 import { Grid, Button, List, Header } from 'semantic-ui-react'
 import { Card, Icon, Image, Label } from 'semantic-ui-react'
 
-import './HomePage.css';
+import './FeedPage.css';
 
 const GridLayout = () => (
-  <Grid columns={2} verticalAlign='middle'  stretched container stackable >
+  <Grid columns={2} verticalAlign='middle'   container stackable >
     <Grid.Row>
       <Grid.Column width={5}>
-       <ProfileCard/>
-        </Grid.Column>
-    <Grid.Column width={11} >
-        <Grid columns={1} textAlign='center' verticalAlign='middle'  >
+                  <Grid columns={1} textAlign='center' verticalAlign='middle'  >
             <Grid.Row>
                     <Header size='huge'>Followed Classes</Header>
 
@@ -30,6 +27,10 @@ const GridLayout = () => (
             </Grid.Row>
             
         </Grid>
+        </Grid.Column>
+    <Grid.Column width={11} >
+       <ProfileCard/>
+
     </Grid.Column>
 
     </Grid.Row>
@@ -121,7 +122,7 @@ const ProfileCard = () => (
   </Card>
 )
 
-class HomePage extends Component {
+class FeedPage extends Component {
   render() {
     return (
         <GridLayout/>
@@ -129,4 +130,4 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
+export default FeedPage;
