@@ -5,7 +5,7 @@ import { Card, Icon, Image, Label } from 'semantic-ui-react'
 import './FeedPage.css';
 
 const GridLayout = () => (
-  <Grid columns={2} verticalAlign='middle'   container stackable >
+  <Grid columns={2} verticalAlign='middle' container stackable >
     <Grid.Row>
       <Grid.Column width={5}>
                   <Grid columns={1} textAlign='center' verticalAlign='middle'  >

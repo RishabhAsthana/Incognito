@@ -6,6 +6,8 @@ import Header from './components/Header/Header';
 import HomePage from './components/HomePage/HomePage';
 import FeedPage from './components/FeedPage/FeedPage';
 import StatisticsPage from './components/StatisticsPage/StatisticsPage';
+import SurveyForm from './components/SurveyForm/SurveyForm';
+
 
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import registerServiceWorker from './registerServiceWorker';
@@ -17,7 +19,8 @@ const App = () => {
             <Header/>
             <Route exact path="/" component={HomePage}></Route>
             <Route path="/feed" component={FeedPage}></Route>
-            <Route path="/statistics" component={StatisticsPage}></Route>
+            <Route path="/statistics" component={SurveyForm}></Route>
+        
         </div>
     </Router>
     )
