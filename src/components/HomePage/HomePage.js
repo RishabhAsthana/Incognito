@@ -47,9 +47,9 @@ const ThreadList = () => (
       </List.Content>
         
       <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <Label >
+            <VoteButton >
                 <Icon name='arrow up' /> 45
-            </Label>
+            </VoteButton>
       </List.Content>
         
     </List.Item>
@@ -61,9 +61,9 @@ const ThreadList = () => (
       </List.Content>
         
       <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <Label >
+            <VoteButton >
                 <Icon name='arrow up' /> 34
-            </Label>
+            </VoteButton>
       </List.Content>
         
     </List.Item>
@@ -75,9 +75,9 @@ const ThreadList = () => (
       </List.Content>
         
       <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <Label >
+            <VoteButton >
                 <Icon name='arrow up' /> 33
-            </Label>
+            </VoteButton>
       </List.Content>
     </List.Item>
         
@@ -88,9 +88,9 @@ const ThreadList = () => (
       </List.Content>
         
       <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <Label >
+            <VoteButton >
                 <Icon name='arrow up' /> 23
-            </Label>
+            </VoteButton>
       </List.Content>
         
     </List.Item>
@@ -125,6 +125,39 @@ class HomePage extends Component {
   render() {
     return (
         <GridLayout/>
+    );
+  }
+}
+
+class VoteButton extends Button {
+
+  constructor() {
+    super();
+    this.state = {color: '#e0e1e2', active: false, votes: Math.floor(Math.random()*100)+1}
+    this.onClick.bind(this)
+  }
+
+  onClick() {
+    if (!this.state.active) {
+      this.setState({ color: 'green'})
+      var update_votes = parseInt(this.state.votes) + 1
+      this.setState({votes: update_votes})
+      this.setState({ active: !this.state.active})
+    }
+    else {
+      this.setState({ color: '#e0e1e2'})
+      var update_votes = parseInt(this.state.votes) - 1
+      this.setState({votes: update_votes})
+      this.setState({ active: !this.state.active})
+    }
+    
+  }
+
+  render() {
+    return(
+      <Button style={{backgroundColor:this.state.color}} onClick={() => this.onClick()}>
+        <Icon name='arrow up'/> {this.state.votes}
+      </Button>
     );
   }
 }
