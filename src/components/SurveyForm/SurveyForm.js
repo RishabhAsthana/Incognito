@@ -9,11 +9,34 @@ class SurveyForm extends Component {
     
   constructor(){
       super();
-      this.state = {difficulty:'1', instruction:'1', resources:'1'};
+      this.state = {difficulty:'1', instruction:'1', resources:'1',
+                    arr: [
+                    { name: "Eigenvectors", isActive: false },
+                    { name: "Pagerank", isActive: false },
+                    { name: "COO", isActive: false },
+                    { name: "CSC", isActive: false },
+                    { name: "Complexity Analysis", isActive: false }
+                    ]
+                   };
       this.setDifficulty.bind(this);
       this.setInstruction.bind(this);
       this.setResources.bind(this);
+      this.onClick.bind(this);
   }
+    
+  submitForm(){
+     let tmp = this.state.arr;
+      for(var it in tmp)
+          tmp[it].isActive = false;
+      this.setState({ arr: tmp, difficulty:'1', instruction:'1', resources:'1' });
+
+  }
+
+  onClick(index) {
+        let tmp = this.state.arr;
+        tmp[index].isActive = !tmp[index].isActive;
+        this.setState({ arr: tmp });
+    }
     
   setDifficulty = (e, { value }) => this.setState({ difficulty:value })
   setInstruction = (e, { value }) => this.setState({ instruction:value })
@@ -89,16 +112,18 @@ class SurveyForm extends Component {
           
           </Grid>
             
+            
             <Grid centered>
-                    <Button primary type='submit'>Eigenvectors</Button>
-                    <Button primary type='submit'>Pagerank</Button>
-                    <Button primary type='submit'>COO</Button>
-                    <Button primary type='submit'>CSC</Button>
-                    <Button primary type='submit'>Complexity Analysis</Button>
+              <label> <h4 style={{paddingTop:'0.6em'}}> Challenging Concepts : </h4></label>
+                    {this.state.arr.map((el, index) =>
+                    <Button toggle key={index} active = {el.isActive} onClick={() => this.onClick(index)}>
+                        {el.name} 
+                    </Button>
+                    )}
              </Grid>
             <Grid>
             <Grid.Column>
-            <Button  positive floated='right' type='submit'>Submit</Button>
+            <Button  primary floated='right' type='submit' onClick={() => this.submitForm()}>Submit</Button>
                 </Grid.Column>
                 </Grid>
           </Form>        
