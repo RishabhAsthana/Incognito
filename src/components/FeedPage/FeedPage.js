@@ -4,6 +4,7 @@ import { Card, Icon, Image, Label } from 'semantic-ui-react'
 
 import './FeedPage.css';
 
+
 const GridLayout = () => (
   <Grid columns={2} verticalAlign='middle' container stackable >
     <Grid.Row>
@@ -44,13 +45,13 @@ const ThreadList = () => (
     <List.Item>
       <Image avatar src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg' />
       <List.Content>
-        <List.Header as='a'>How to connect to the server?</List.Header>
+        <List.Header as='a'>Extra Office Hours for the Midterm</List.Header>
       </List.Content>
-        
+
       <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <Label >
-                <Icon name='arrow up' /> 45
-            </Label>
+          <VoteButton >
+                <Icon name='arrow up' /> 34
+          </VoteButton>
       </List.Content>
         
     </List.Item>
@@ -62,9 +63,9 @@ const ThreadList = () => (
       </List.Content>
         
       <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <Label >
+            <VoteButton >
                 <Icon name='arrow up' /> 34
-            </Label>
+            </VoteButton>
       </List.Content>
         
     </List.Item>
@@ -76,9 +77,9 @@ const ThreadList = () => (
       </List.Content>
         
       <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <Label >
+            <VoteButton >
                 <Icon name='arrow up' /> 33
-            </Label>
+            </VoteButton>
       </List.Content>
     </List.Item>
         
@@ -89,9 +90,9 @@ const ThreadList = () => (
       </List.Content>
         
       <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <Label >
+            <VoteButton >
                 <Icon name='arrow up' /> 23
-            </Label>
+            </VoteButton>
       </List.Content>
         
     </List.Item>
@@ -126,6 +127,39 @@ class FeedPage extends Component {
   render() {
     return (
         <GridLayout/>
+    );
+  }
+}
+
+class VoteButton extends Button {
+
+  constructor() {
+    super();
+    this.state = {color: '#e0e1e2', active: false, votes: Math.floor(Math.random()*100)+1}
+    this.onClick.bind(this)
+  }
+
+  onClick() {
+    if (!this.state.active) {
+      this.setState({ color: 'green'})
+      var update_votes = parseInt(this.state.votes) + 1
+      this.setState({votes: update_votes})
+      this.setState({ active: !this.state.active})
+    }
+    else {
+      this.setState({ color: '#e0e1e2'})
+      var update_votes = parseInt(this.state.votes) - 1
+      this.setState({votes: update_votes})
+      this.setState({ active: !this.state.active})
+    }
+    
+  }
+
+  render() {
+    return(
+      <Button style={{backgroundColor:this.state.color}} onClick={() => this.onClick()}>
+        <Icon name='arrow up'/> {this.state.votes}
+      </Button>
     );
   }
 }
