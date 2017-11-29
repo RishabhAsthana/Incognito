@@ -8,7 +8,7 @@ import './FeedPage.css';
 const GridLayout = () => (
   <Grid columns={2} verticalAlign='middle' container stackable >
     <Grid.Row>
-      <Grid.Column width={5}>
+      <Grid.Column width={8}>
                   <Grid columns={1} textAlign='center' verticalAlign='middle'  >
             <Grid.Row>
                     <Header size='huge'>Followed Classes</Header>
@@ -29,7 +29,7 @@ const GridLayout = () => (
             
         </Grid>
         </Grid.Column>
-    <Grid.Column width={11} >
+    <Grid.Column width={8} >
        <ProfileCard/>
 
     </Grid.Column>
@@ -43,56 +43,72 @@ const ThreadList = () => (
   <List divided verticalAlign='middle' size='huge' style={{height:"450px"}} >
     
     <List.Item>
-      <Image avatar src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg' />
+    <Grid columns={2}>
+      <Grid.Column width={11}>
       <List.Content>
         <List.Header as='a'>Extra Office Hours for the Midterm</List.Header>
       </List.Content>
-
-      <List.Content floated='right' style={{paddingTop:'0.25em'}}>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
           <ParentProps>
           </ParentProps>
       </List.Content>
-        
+      </Grid.Column>
+    </Grid>
     </List.Item>
-    
+
     <List.Item>
-      <Image avatar src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg' />
+    <Grid columns={2}>
+      <Grid.Column width={11}>
       <List.Content>
         <List.Header as='a'>Why randomization improves QuickSort pivot selection?</List.Header>
       </List.Content>
-        
-      <List.Content floated='right' style={{paddingTop:'0.25em'}}>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
           <ParentProps>
           </ParentProps>
       </List.Content>
-        
+      </Grid.Column>
+    </Grid>
     </List.Item>
-        
+    
     <List.Item>
-      <Image avatar src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg' />
+    <Grid columns={2}>
+      <Grid.Column width={11}>
       <List.Content>
         <List.Header as='a'>Is it just me or this course is getting too difficult?</List.Header>
       </List.Content>
-        
-      <List.Content floated='right' style={{paddingTop:'0.25em'}}>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
           <ParentProps>
           </ParentProps>
       </List.Content>
-    </List.Item>
-        
-    <List.Item>
-      <Image avatar src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg' />
-      <List.Content>
-        <List.Header as='a'>Why do we only care about Eigenvectors with Eigen value 1?</List.Header>  
-      </List.Content>
-        
-      <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-          <ParentProps>
-          </ParentProps>
-      </List.Content>
-        
+      </Grid.Column>
+    </Grid>
     </List.Item>
 
+    <List.Item>
+    <Grid columns={2}>
+      <Grid.Column width={11}>
+      <List.Content>
+        <List.Header as='a'>Why do we only care about Eigenvectors with Eigen value 1?</List.Header>
+      </List.Content>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
+          <ParentProps>
+          </ParentProps>
+      </List.Content>
+      </Grid.Column>
+    </Grid>
+    </List.Item>
         
   </List>
 )
