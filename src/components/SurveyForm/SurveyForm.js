@@ -51,7 +51,7 @@ class SurveyForm extends Component {
       <Modal.Description>
         <Header>CS 357</Header>
         <Form >
-            <Grid columns={3}  container>
+            <Grid columns={3} container>
             <Grid.Row>
                 <Grid.Column width={5}>
                 

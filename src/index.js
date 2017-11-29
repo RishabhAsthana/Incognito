@@ -7,6 +7,8 @@ import HomePage from './components/HomePage/HomePage';
 import FeedPage from './components/FeedPage/FeedPage';
 import StatisticsPage from './components/StatisticsPage/StatisticsPage';
 import SurveyForm from './components/SurveyForm/SurveyForm';
+import FeedbackForm from './components/FeedbackForm/FeedbackForm';
+import LoginPage from './components/LoginPage/LoginPage';
 
 
 import {BrowserRouter as Router, Route} from 'react-router-dom'
@@ -19,7 +21,10 @@ const App = () => {
             <Header/>
             <Route exact path="/" component={HomePage}></Route>
             <Route path="/feed" component={FeedPage}></Route>
-            <Route path="/statistics" component={SurveyForm}></Route>
+            <Route path="/statistics" component={StatisticsPage}></Route>
+            <Route path="/feedback" component={FeedbackForm}></Route>
+            <Route path="/survey" component={SurveyForm}></Route>
+            <Route path="/login" component={LoginPage}></Route>
         
         </div>
     </Router>
