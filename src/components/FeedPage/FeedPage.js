@@ -49,9 +49,8 @@ const ThreadList = () => (
       </List.Content>
 
       <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-          <VoteButton >
-                <Icon name='arrow up' /> 34
-          </VoteButton>
+          <ParentProps>
+          </ParentProps>
       </List.Content>
         
     </List.Item>
@@ -63,9 +62,8 @@ const ThreadList = () => (
       </List.Content>
         
       <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <VoteButton >
-                <Icon name='arrow up' /> 34
-            </VoteButton>
+          <ParentProps>
+          </ParentProps>
       </List.Content>
         
     </List.Item>
@@ -77,9 +75,8 @@ const ThreadList = () => (
       </List.Content>
         
       <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <VoteButton >
-                <Icon name='arrow up' /> 33
-            </VoteButton>
+          <ParentProps>
+          </ParentProps>
       </List.Content>
     </List.Item>
         
@@ -90,9 +87,8 @@ const ThreadList = () => (
       </List.Content>
         
       <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <VoteButton >
-                <Icon name='arrow up' /> 23
-            </VoteButton>
+          <ParentProps>
+          </ParentProps>
       </List.Content>
         
     </List.Item>
@@ -131,11 +127,52 @@ class FeedPage extends Component {
   }
 }
 
-class VoteButton extends Button {
+class ParentProps extends Component {
 
   constructor() {
     super();
-    this.state = {color: '#e0e1e2', active: false, votes: Math.floor(Math.random()*100)+1}
+    var num_votes = Math.floor(Math.random()*100)+1;
+    var resolve = Math.random() >= 0.5;
+    this.state = {votes: num_votes, resolved: resolve}
+  }
+
+  render() {
+    return(
+      <div>
+        <VoteButton votes={this.state.votes} />
+        <RangeLabel votes={this.state.votes} resolved={this.state.resolved} />
+      </div>
+      );
+  }
+}
+
+class RangeLabel extends Component {
+
+  constructor(props) {
+    super();
+    if (props.resolved) {
+      this.state = {color: 'rgba(0,255,0,1)'}
+    }
+    else {
+      var colorWeight = props.votes*0.01
+      this.state = {color: 'rgba(255,0,0,' + colorWeight + ')'}
+    }
+  }
+
+  render() {
+    return(
+      <Label style={{backgroundColor: this.state.color}}>
+      </Label>
+    );
+  }
+}
+
+
+class VoteButton extends Button {
+
+  constructor(props) {
+    super();
+    this.state = {color: '#e0e1e2', active: false, votes: props.votes}
     this.onClick.bind(this)
   }
 
