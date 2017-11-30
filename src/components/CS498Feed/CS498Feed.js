@@ -8,8 +8,8 @@ import './CS498Feed.css';
 import src from '../FeedPage/preview.png';
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
 
-const classData = ['Extra Office Hours for the MP1',
-                   'API is hard to work with',
+const classData = ['Extra Office Hours for MP1',
+                   'API is hard to work with. Perhaps we can try another one?',
                    'CATME for group assignments please',
                    'Allow us to use OpenGL'];
 
@@ -152,7 +152,7 @@ class RangeLabel extends Component {
       }
       else {
         return (<Button style={{backgroundColor: this.state.color}}>
-      </Button>);
+          </Button>);
       }
   }
 }

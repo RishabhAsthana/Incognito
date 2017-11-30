@@ -35,11 +35,6 @@ class InstructorResponse extends Component {
             </Grid.Row>
 
         </Grid>
-            <Grid>
-            <Grid.Column>
-            <Button  primary floated='right' type='submit' onClick={() => this.submitForm()}>Submit</Button>
-                </Grid.Column>
-                </Grid>
           </Form>        
       </Modal.Description>
     </Modal.Content>
