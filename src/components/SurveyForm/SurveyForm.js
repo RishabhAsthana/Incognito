@@ -5,9 +5,10 @@ import './SurveyForm.css';
 
 class SurveyForm extends Component {
     
-  constructor(){
+  constructor(props){
       super();
-      this.state = {difficulty:'1', instruction:'1', resources:'1',
+      this.state = {class: props.class,
+                    difficulty:'1', instruction:'1', resources:'1',
                     arr: [
                     { name: "Eigenvectors", isActive: false },
                     { name: "Pagerank", isActive: false },
@@ -57,7 +58,7 @@ class SurveyForm extends Component {
     <Modal.Content >
      
       <Modal.Description>
-        <Header>CS 357</Header>
+        <Header>{this.state.class}</Header>
         <Form >
             <Grid columns={3} container>
             <Grid.Row>
