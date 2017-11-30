@@ -55,7 +55,7 @@ const ThreadList = () => (
     <Grid columns={2}>
       <Grid.Column width={11}>
       <List.Content>
-        <List.Header as='a'>Extra Office Hours for the Midterm</List.Header>
+        <List.Header as='a'>iOS over Android please</List.Header>
       </List.Content>
         </Grid.Column>
     
@@ -72,7 +72,7 @@ const ThreadList = () => (
     <Grid columns={2}>
       <Grid.Column width={11}>
       <List.Content>
-        <List.Header as='a'>Why randomization improves QuickSort pivot selection?</List.Header>
+        <List.Header as='a'>Loving the studio sessions, but is it possible to move them closer to Siebel?</List.Header>
       </List.Content>
         </Grid.Column>
     
@@ -89,7 +89,7 @@ const ThreadList = () => (
     <Grid columns={2}>
       <Grid.Column width={11}>
       <List.Content>
-        <List.Header as='a'>Is it just me or this course is getting too difficult?</List.Header>
+        <List.Header as='a'>Why CATME?</List.Header>
       </List.Content>
         </Grid.Column>
     
@@ -106,7 +106,7 @@ const ThreadList = () => (
     <Grid columns={2}>
       <Grid.Column width={11}>
       <List.Content>
-        <List.Header as='a'>Why do we only care about Eigenvectors with Eigen value 1?</List.Header>
+        <List.Header as='a'>My group member just dropped the class. What do I do?</List.Header>
       </List.Content>
         </Grid.Column>
     
