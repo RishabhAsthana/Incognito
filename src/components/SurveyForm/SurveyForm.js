@@ -3,8 +3,6 @@ import { Button, Checkbox, Form, Container, Radio, Grid, Modal, Image, Header, S
 import logo from './logo.svg';
 import './SurveyForm.css';
 
-
-
 class SurveyForm extends Component {
     
   constructor(){
@@ -44,7 +42,7 @@ class SurveyForm extends Component {
   render() {
       
     return (
-<Modal trigger={<Button>Show Modal</Button>} size='large' closeIcon closeOnRootNodeClick={false} >
+<Modal trigger={<Button color="yellow">Survey Request</Button>} size='large' closeIcon closeOnRootNodeClick={false} >
     <Modal.Header>Survey Form</Modal.Header>
     <Modal.Content >
      

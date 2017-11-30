@@ -1,50 +1,53 @@
 import React, { Component } from 'react';
 import { Grid, Button, List, Header } from 'semantic-ui-react'
 import { Card, Icon, Image, Label } from 'semantic-ui-react'
+import SurveyForm from '../SurveyForm/SurveyForm';
 
 import './FeedPage.css';
+import src from './preview.png';
 
 
 const GridLayout = () => (
   <Grid columns={2} verticalAlign='middle' container stackable >
     <Grid.Row>
       <Grid.Column width={8}>
-                  <Grid columns={1} textAlign='center' verticalAlign='middle'  >
+            <Grid columns={1} textAlign='center' verticalAlign='middle'  >
             <Grid.Row>
-                    <Header size='huge'>Followed Classes</Header>
-
+                    <Header size='huge'>Classes</Header>
             </Grid.Row>
             <Grid.Row>
                 <Button color="blue">CS 465</Button>
                 <Button color="blue">CS 498</Button>
-                <Button color="blue">CS 357</Button>
+                <Button color="green">CS 357</Button>
                 <Button color="blue">CS 242</Button>
             </Grid.Row>
              <Grid.Row>
-                    <Header size='huge'>Followed Threads</Header>
+                <SurveyForm/>
             </Grid.Row>
-             <Grid.Row  >
+            <Grid.Row >
                  <ThreadList/>
             </Grid.Row>
-            
-        </Grid>
+            </Grid>
         </Grid.Column>
     <Grid.Column width={8} >
-       <ProfileCard/>
-
+       <ImageExampleImage/>
     </Grid.Column>
-
     </Grid.Row>
-        
+    
   </Grid>
 )
 
+const ImageExampleImage = () => (
+  <Image src={src} size='massive' />
+)
+
 const ThreadList = () => (
-  <List divided verticalAlign='middle' size='huge' style={{height:"450px"}} >
+  <List divided verticalAlign='middle' size='huge' style={{height:"350px",overflowY:"auto",overflowXx:"hidden"}}  >
     
-    <List.Item>
+    <List.Item >
     <Grid columns={2}>
-      <Grid.Column width={11}>
+        
+        <Grid.Column width={11}>
       <List.Content>
         <List.Header as='a'>Extra Office Hours for the Midterm</List.Header>
       </List.Content>
@@ -109,8 +112,137 @@ const ThreadList = () => (
       </Grid.Column>
     </Grid>
     </List.Item>
+{/* ssssssssssssssssssss */}
+            <List.Item>
+    <Grid columns={2}>
+      <Grid.Column width={11}>
+      <List.Content>
+        <List.Header as='a'>Why do we only care about Eigenvectors with Eigen value 1?</List.Header>
+      </List.Content>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
+          <ParentProps>
+          </ParentProps>
+      </List.Content>
+      </Grid.Column>
+    </Grid>
+    </List.Item>
+            <List.Item>
+    <Grid columns={2}>
+      <Grid.Column width={11}>
+      <List.Content>
+        <List.Header as='a'>Why do we only care about Eigenvectors with Eigen value 1?</List.Header>
+      </List.Content>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
+          <ParentProps>
+          </ParentProps>
+      </List.Content>
+      </Grid.Column>
+    </Grid>
+    </List.Item>
+            <List.Item>
+    <Grid columns={2}>
+      <Grid.Column width={11}>
+      <List.Content>
+        <List.Header as='a'>Why do we only care about Eigenvectors with Eigen value 1?</List.Header>
+      </List.Content>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
+          <ParentProps>
+          </ParentProps>
+      </List.Content>
+      </Grid.Column>
+    </Grid>
+    </List.Item>
+            <List.Item>
+    <Grid columns={2}>
+      <Grid.Column width={11}>
+      <List.Content>
+        <List.Header as='a'>Why do we only care about Eigenvectors with Eigen value 1?</List.Header>
+      </List.Content>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
+          <ParentProps>
+          </ParentProps>
+      </List.Content>
+      </Grid.Column>
+    </Grid>
+    </List.Item>
+            <List.Item>
+    <Grid columns={2}>
+      <Grid.Column width={11}>
+      <List.Content>
+        <List.Header as='a'>Why do we only care about Eigenvectors with Eigen value 1?</List.Header>
+      </List.Content>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
+          <ParentProps>
+          </ParentProps>
+      </List.Content>
+      </Grid.Column>
+    </Grid>
+    </List.Item>
+            <List.Item>
+    <Grid columns={2}>
+      <Grid.Column width={11}>
+      <List.Content>
+        <List.Header as='a'>Why do we only care about Eigenvectors with Eigen value 1?</List.Header>
+      </List.Content>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
+          <ParentProps>
+          </ParentProps>
+      </List.Content>
+      </Grid.Column>
+    </Grid>
+    </List.Item>
+            <List.Item>
+    <Grid columns={2}>
+      <Grid.Column width={11}>
+      <List.Content>
+        <List.Header as='a'>Why do we only care about Eigenvectors with Eigen value 1?</List.Header>
+      </List.Content>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
+          <ParentProps>
+          </ParentProps>
+      </List.Content>
+      </Grid.Column>
+    </Grid>
+    </List.Item>
+            <List.Item>
+    <Grid columns={2}>
+      <Grid.Column width={11}>
+      <List.Content>
+        <List.Header as='a'>Why do we only care about Eigenvectors with Eigen value 1?</List.Header>
+      </List.Content>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
+          <ParentProps>
+          </ParentProps>
+      </List.Content>
+      </Grid.Column>
+    </Grid>
+    </List.Item>
         
-  </List>
+    </List>
 )
 
 const ProfileCard = () => (
