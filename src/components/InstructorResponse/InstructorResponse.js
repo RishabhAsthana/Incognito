@@ -21,7 +21,7 @@ class InstructorResponse extends Component {
 
     render() {
     return (
-<Modal trigger={<Button style={{backgroundColor: this.state.color}} >{this.state.class}</Button>} size='large' closeIcon closeOnRootNodeClick={false} >
+<Modal trigger={<Button style={{backgroundColor: this.state.color}} >{this.state.class}</Button>} size='large' closeIcon closeOnRootNodeClick={false} dimmer='blurring' >
     <Modal.Header>Resolved: Instructor Response</Modal.Header>
     <Modal.Content >
       
