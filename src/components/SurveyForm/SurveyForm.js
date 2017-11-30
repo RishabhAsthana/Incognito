@@ -14,19 +14,23 @@ class SurveyForm extends Component {
                     { name: "COO", isActive: false },
                     { name: "CSC", isActive: false },
                     { name: "Complexity Analysis", isActive: false }
-                    ]
+                    ],
+                    modalOpen:false
                    };
       this.setDifficulty.bind(this);
       this.setInstruction.bind(this);
       this.setResources.bind(this);
+      this.handleOpen.bind(this);
       this.onClick.bind(this);
   }
     
+  handleOpen = () => this.setState({ modalOpen: true });
+
   submitForm(){
      let tmp = this.state.arr;
       for(var it in tmp)
           tmp[it].isActive = false;
-      this.setState({ arr: tmp, difficulty:'1', instruction:'1', resources:'1' });
+      this.setState({ arr: tmp, difficulty:'1', instruction:'1', resources:'1', modalOpen:false });
 
   }
 
@@ -42,7 +46,13 @@ class SurveyForm extends Component {
   render() {
       
     return (
-<Modal trigger={<Button color="yellow">Survey Request</Button>} size='large' closeIcon closeOnRootNodeClick={false} >
+    <Modal 
+    trigger={<Button onClick={this.handleOpen} color="yellow">Survey Request</Button>} 
+    size='large' 
+    dimmer='blurring' 
+    open = {this.state.modalOpen}
+    closeOnRootNodeClick={false}
+    >
     <Modal.Header>Survey Form</Modal.Header>
     <Modal.Content >
      
