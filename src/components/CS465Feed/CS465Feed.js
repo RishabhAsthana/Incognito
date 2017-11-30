@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Button, List, Header } from 'semantic-ui-react'
 import { Card, Icon, Image, Label } from 'semantic-ui-react'
 
-import './FeedPage.css';
+import './CS465Feed.css';
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
 
 
@@ -16,13 +16,21 @@ const GridLayout = () => (
 
             </Grid.Row>
             <Grid.Row>
+              <a href="http://localhost:3000/CS465feed">
                 <Button color="blue">CS 465</Button>
+              </a>
+              <a href="http://localhost:3000/CS498feed">
                 <Button color="blue">CS 498</Button>
+              </a>
+              <a href="http://localhost:3000/CS357feed">
                 <Button color="blue">CS 357</Button>
+              </a>
+              <a href="http://localhost:3000/CS242feed">
                 <Button color="blue">CS 242</Button>
+              </a>
             </Grid.Row>
              <Grid.Row>
-                    <Header size='huge'>Followed Threads</Header>
+                    <Header size='huge'>Threads for CS 465</Header>
             </Grid.Row>
              <Grid.Row  >
                  <ThreadList/>

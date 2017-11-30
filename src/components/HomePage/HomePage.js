@@ -18,7 +18,18 @@ const GridLayout = () => (
 
             </Grid.Row>
             <Grid.Row>
-                <ClassButtons></ClassButtons>
+              <a href="http://localhost:3000/CS465feed">
+                <Button color="blue">CS 465</Button>
+              </a>
+              <a href="http://localhost:3000/CS498feed">
+                <Button color="blue">CS 498</Button>
+              </a>
+              <a href="http://localhost:3000/CS357feed">
+                <Button color="blue">CS 357</Button>
+              </a>
+              <a href="http://localhost:3000/CS242feed">
+                <Button color="blue">CS 242</Button>
+              </a>
             </Grid.Row>
              <Grid.Row>
                     <Header size='huge'>Followed Threads</Header>
@@ -201,7 +212,7 @@ class ClassButtons extends Component {
 
   constructor() {
     super();
-    var classes = ["CS 465", "CS498", "CS 357", "CS 242"];
+    var classes = ["CS 465", "CS 498", "CS 357", "CS 242"];
     this.state = {class: classes};
   }
 

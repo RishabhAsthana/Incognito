@@ -9,6 +9,10 @@ import StatisticsPage from './components/StatisticsPage/StatisticsPage';
 import SurveyForm from './components/SurveyForm/SurveyForm';
 import FeedbackForm from './components/FeedbackForm/FeedbackForm';
 import LoginPage from './components/LoginPage/LoginPage';
+import CS465Feed from './components/CS465Feed/CS465Feed';
+import CS498Feed from './components/CS498Feed/CS498Feed';
+import CS357Feed from './components/CS357Feed/CS357Feed';
+import CS242Feed from './components/CS242Feed/CS242Feed';
 
 
 import {BrowserRouter as Router, Route} from 'react-router-dom'
@@ -25,6 +29,10 @@ const App = () => {
             <Route path="/feedback" component={FeedbackForm}></Route>
             <Route path="/survey" component={SurveyForm}></Route>
             <Route path="/login" component={LoginPage}></Route>
+            <Route path="/CS465feed" component={CS465Feed}></Route>
+            <Route path="/CS498feed" component={CS498Feed}></Route>
+            <Route path="/CS357feed" component={CS357Feed}></Route>
+            <Route path="/CS242feed" component={CS242Feed}></Route>
         
         </div>
     </Router>

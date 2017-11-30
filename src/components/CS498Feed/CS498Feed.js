@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Button, List, Header } from 'semantic-ui-react'
 import { Card, Icon, Image, Label } from 'semantic-ui-react'
 
-import './FeedPage.css';
+import './CS498Feed.css';
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
 
 
@@ -16,13 +16,21 @@ const GridLayout = () => (
 
             </Grid.Row>
             <Grid.Row>
+              <a href="http://localhost:3000/CS465feed">
                 <Button color="blue">CS 465</Button>
+              </a>
+              <a href="http://localhost:3000/CS498feed">
                 <Button color="blue">CS 498</Button>
+              </a>
+              <a href="http://localhost:3000/CS357feed">
                 <Button color="blue">CS 357</Button>
+              </a>
+              <a href="http://localhost:3000/CS242feed">
                 <Button color="blue">CS 242</Button>
+              </a>
             </Grid.Row>
              <Grid.Row>
-                    <Header size='huge'>Followed Threads</Header>
+                    <Header size='huge'>Threads for CS 498</Header>
             </Grid.Row>
              <Grid.Row  >
                  <ThreadList/>
@@ -47,7 +55,7 @@ const ThreadList = () => (
     <Grid columns={2}>
       <Grid.Column width={11}>
       <List.Content>
-        <List.Header as='a'>Extra Office Hours for the Midterm</List.Header>
+        <List.Header as='a'>Extra Office Hours for MP1</List.Header>
       </List.Content>
         </Grid.Column>
     
