@@ -2,17 +2,15 @@ import React, { Component } from 'react';
 import { Grid, Button, List, Header } from 'semantic-ui-react'
 import { Card, Icon, Image, Label } from 'semantic-ui-react'
 
-import './HomePage.css';
+import './CS242Feed.css';
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
 
+
 const GridLayout = () => (
-  <Grid columns={2} verticalAlign='middle'  stretched container stackable >
+  <Grid columns={2} verticalAlign='middle' container stackable >
     <Grid.Row>
-      <Grid.Column width={5}>
-       <ProfileCard/>
-        </Grid.Column>
-    <Grid.Column width={11} >
-        <Grid columns={1} textAlign='center' verticalAlign='middle'  >
+      <Grid.Column width={8}>
+                  <Grid columns={1} textAlign='center' verticalAlign='middle'  >
             <Grid.Row>
                     <Header size='huge'>Followed Classes</Header>
 
@@ -32,13 +30,17 @@ const GridLayout = () => (
               </a>
             </Grid.Row>
              <Grid.Row>
-                    <Header size='huge'>Followed Threads</Header>
+                    <Header size='huge'>Threads for CS 242</Header>
             </Grid.Row>
              <Grid.Row  >
                  <ThreadList/>
             </Grid.Row>
             
         </Grid>
+        </Grid.Column>
+    <Grid.Column width={8} >
+       <ProfileCard/>
+
     </Grid.Column>
 
     </Grid.Row>
@@ -50,56 +52,55 @@ const ThreadList = () => (
   <List divided verticalAlign='middle' size='huge' style={{height:"450px"}} >
     
     <List.Item>
-      <Image avatar src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg' />
+    <Grid columns={2}>
+      <Grid.Column width={11}>
       <List.Content>
-        <List.Header as='a'>How to connect to the server?</List.Header>
+        <List.Header as='a'>My grader has not completed grading Assignment1.0 yet</List.Header>
       </List.Content>
-        
-      <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <ParentProps>
-            </ParentProps>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
+          <ParentProps>
+          </ParentProps>
       </List.Content>
-        
+      </Grid.Column>
+    </Grid>
+    </List.Item>
+
+    <List.Item>
+    <Grid columns={2}>
+      <Grid.Column width={11}>
+      <List.Content>
+        <List.Header as='a'>Is there a quiz today?</List.Header>
+      </List.Content>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
+          <ParentProps>
+          </ParentProps>
+      </List.Content>
+      </Grid.Column>
+    </Grid>
     </List.Item>
     
     <List.Item>
-      <Image avatar src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg' />
+    <Grid columns={2}>
+      <Grid.Column width={11}>
       <List.Content>
-        <List.Header as='a'>Why randomization improves QuickSort pivot selection?</List.Header>
+        <List.Header as='a'>Is it just me or this course is too difficult?</List.Header>
       </List.Content>
-        
-      <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <ParentProps>
-            </ParentProps>
+        </Grid.Column>
+    
+      <Grid.Column width={5}>
+      <List.Content floated='right' >
+          <ParentProps>
+          </ParentProps>
       </List.Content>
-        
+      </Grid.Column>
+    </Grid>
     </List.Item>
-        
-    <List.Item>
-      <Image avatar src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg' />
-      <List.Content>
-        <List.Header as='a'>Is it just me or this course is getting too difficult?</List.Header>
-      </List.Content>
-        
-      <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <ParentProps>
-            </ParentProps>
-      </List.Content>
-    </List.Item>
-        
-    <List.Item>
-      <Image avatar src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg' />
-      <List.Content>
-        <List.Header as='a'>Why do we only care about Eigenvectors with Eigen value 1?</List.Header>  
-      </List.Content>
-        
-      <List.Content floated='right' style={{paddingTop:'0.25em'}}>
-            <ParentProps>
-            </ParentProps>
-      </List.Content>
-        
-    </List.Item>
-
         
   </List>
 )
@@ -126,13 +127,33 @@ const ProfileCard = () => (
   </Card>
 )
 
-class HomePage extends Component {
+class FeedPage extends Component {
   render() {
     return (
         <GridLayout/>
     );
   }
 }
+
+// class ClassButtons extends Component {
+
+//   constructor() {
+//     super();
+//     var classes = ["CS 465", "CS498", "CS 357", "CS 242"];
+//     this.state = {class: classes};
+//   }
+
+//   render() {
+//     return(
+//       <div>
+//         <FeedbackForm class={this.state.class[0]} color="blue">{this.state.class[0]}</FeedbackForm>
+//         <FeedbackForm class={this.state.class[1]} color="blue">{this.state.class[1]}</FeedbackForm>
+//         <FeedbackForm class={this.state.class[2]} color="blue">{this.state.class[2]}</FeedbackForm>
+//         <FeedbackForm class={this.state.class[3]} color="blue">{this.state.class[3]}</FeedbackForm>
+//       </div>
+//     )
+//   }
+// }
 
 class ParentProps extends Component {
 
@@ -208,24 +229,4 @@ class VoteButton extends Button {
   }
 }
 
-class ClassButtons extends Component {
-
-  constructor() {
-    super();
-    var classes = ["CS 465", "CS 498", "CS 357", "CS 242"];
-    this.state = {class: classes};
-  }
-
-  render() {
-    return(
-      <div>
-        <FeedbackForm class={this.state.class[0]} color="blue">{this.state.class[0]}</FeedbackForm>
-        <FeedbackForm class={this.state.class[1]} color="blue">{this.state.class[1]}</FeedbackForm>
-        <FeedbackForm class={this.state.class[2]} color="blue">{this.state.class[2]}</FeedbackForm>
-        <FeedbackForm class={this.state.class[3]} color="blue">{this.state.class[3]}</FeedbackForm>
-      </div>
-    )
-  }
-}
-
-export default HomePage;
+export default FeedPage;

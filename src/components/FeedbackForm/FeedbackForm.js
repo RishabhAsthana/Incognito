@@ -6,8 +6,9 @@ import SurveyForm from '../SurveyForm/SurveyForm';
 
 class FeedbackForm extends Component {
     
-  constructor(){
+  constructor(props){
       super();
+      this.state = {class: props.class};
   }
     
   submitForm(){
@@ -19,14 +20,13 @@ class FeedbackForm extends Component {
   }
 
     render() {
-      
     return (
-<Modal trigger={<Button>Show Modal</Button>} size='large' closeIcon closeOnRootNodeClick={false} >
+<Modal trigger={<Button color="blue">{this.state.class}</Button>} size='large' closeIcon closeOnRootNodeClick={false} >
     <Modal.Header>Feedback Form</Modal.Header>
     <Modal.Content >
      
       <Modal.Description>
-        <Header>CS 357</Header>
+        <Header>{this.state.class}</Header>
        <Form>
         <Grid columns={1} container centered>
                         <Grid.Row stretched>
