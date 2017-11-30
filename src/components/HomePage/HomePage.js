@@ -3,6 +3,7 @@ import { Grid, Button, List, Header } from 'semantic-ui-react'
 import { Card, Icon, Image, Label } from 'semantic-ui-react'
 
 import './HomePage.css';
+import FeedbackForm from '../FeedbackForm/FeedbackForm';
 
 const GridLayout = () => (
   <Grid columns={2} verticalAlign='middle'  stretched container stackable >
@@ -17,10 +18,7 @@ const GridLayout = () => (
 
             </Grid.Row>
             <Grid.Row>
-                <Button color="blue">CS 465</Button>
-                <Button color="blue">CS 498</Button>
-                <Button color="blue">CS 357</Button>
-                <Button color="blue">CS 242</Button>
+                <ClassButtons></ClassButtons>
             </Grid.Row>
              <Grid.Row>
                     <Header size='huge'>Followed Threads</Header>
@@ -196,6 +194,26 @@ class VoteButton extends Button {
         <Icon name='arrow up'/> {this.state.votes}
       </Button>
     );
+  }
+}
+
+class ClassButtons extends Component {
+
+  constructor() {
+    super();
+    var classes = ["CS 465", "CS498", "CS 357", "CS 242"];
+    this.state = {class: classes};
+  }
+
+  render() {
+    return(
+      <div>
+        <FeedbackForm class={this.state.class[0]} color="blue">{this.state.class[0]}</FeedbackForm>
+        <FeedbackForm class={this.state.class[1]} color="blue">{this.state.class[1]}</FeedbackForm>
+        <FeedbackForm class={this.state.class[2]} color="blue">{this.state.class[2]}</FeedbackForm>
+        <FeedbackForm class={this.state.class[3]} color="blue">{this.state.class[3]}</FeedbackForm>
+      </div>
+    )
   }
 }
 
