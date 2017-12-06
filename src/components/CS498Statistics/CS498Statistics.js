@@ -11,7 +11,7 @@ const GridLayout = () => (
                 <Button color="blue">CS 465</Button>
               </a>
               <a href="http://localhost:3000/CS498statistics">
-                <Button color="blue">CS 498</Button>
+                <Button color="green">CS 498</Button>
               </a>
               <a href="http://localhost:3000/CS357statistics">
                 <Button color="blue">CS 357</Button>

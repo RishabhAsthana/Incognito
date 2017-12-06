@@ -8,7 +8,7 @@ const GridLayout = () => (
   <Grid columns={3} verticalAlign='middle' container stackable >
 	<Grid.Row>
               <a href="http://localhost:3000/statistics">
-                <Button color="blue">CS 465</Button>
+                <Button color="green">CS 465</Button>
               </a>
               <a href="http://localhost:3000/CS498statistics">
                 <Button color="blue">CS 498</Button>

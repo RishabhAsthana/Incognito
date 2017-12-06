@@ -32,7 +32,7 @@ const GridLayout = () => (
                 <Button color="blue">CS 357</Button>
               </a>
               <a href="http://localhost:3000/CS242feed">
-                <Button color="blue">CS 242</Button>
+                <Button color="green">CS 242</Button>
               </a>
             </Grid.Row>
              <Grid.Row>
