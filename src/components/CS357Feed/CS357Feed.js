@@ -50,8 +50,15 @@ const GridLayout = () => (
     <Grid.Column width={1}>
     </Grid.Column>
     <Grid.Column width={6} stretched >
+        <Grid>
+        <Grid.Row centered>
+                <Label as='a' color='red' >Unresolved</Label>    
+                <Label as='a' color='green' >Resolved</Label>    
+        </Grid.Row>
+        <Grid.Row>
        <EmbedExampleIframe/>
-    </Grid.Column>
+        </Grid.Row>
+        </Grid>    </Grid.Column>
     </Grid.Row>
     
   </Grid>
