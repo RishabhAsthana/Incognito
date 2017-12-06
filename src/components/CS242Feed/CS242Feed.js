@@ -15,7 +15,7 @@ const classData = ['My grader has not completed grading Assignment1.0 yet',
 const GridLayout = () => (
   <Grid columns={2} verticalAlign='middle' container stackable >
     <Grid.Row>
-      <Grid.Column width={8}>
+      <Grid.Column width={9}>
             <Grid columns={1} textAlign='center' verticalAlign='middle'  >
             <Grid.Row>
                     <Header size='huge'>Classes</Header>
@@ -45,16 +45,22 @@ const GridLayout = () => (
             </Grid.Row>
             </Grid>
         </Grid.Column>
-    <Grid.Column width={8} >
-       <ImageExampleImage/>
+        <Grid.Column width={1}>
+    </Grid.Column>
+    <Grid.Column width={6} stretched >
+       <EmbedExampleIframe/>
     </Grid.Column>
     </Grid.Row>
     
   </Grid>
 )
 
-const ImageExampleImage = () => (
-  <Image src={src} size='massive' />
+const EmbedExampleIframe = () => (
+  <iframe
+    className = 'ch'
+    style={{overflow: "hidden"}}
+    src='http://localhost:3000/graph.html'
+  />
 )
 
 class ClassDetails extends Component {
