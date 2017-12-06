@@ -10,18 +10,15 @@ height: 100%;
   transform: translate(-50%,-50%);
   top:50%;
   left:50%;
+    
 }
 .register{
   color:blue;
   text-decoration: underline;
+    
 }
 body{
-    background-image: url('http://eskipaper.com/images/blur-background-1.jpg');
-    color: white;    
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+   
 }
 .label{
     color: white;
