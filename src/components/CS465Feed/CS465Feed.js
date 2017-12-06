@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
-import { Grid, Button, List, Header } from 'semantic-ui-react'
+import { Grid, Button, List, Header, Embed, Popup } from 'semantic-ui-react'
 import { Card, Icon, Image, Label } from 'semantic-ui-react'
 import SurveyForm from '../SurveyForm/SurveyForm';
 import InstructorResponse from '../InstructorResponse/InstructorResponse';
 
 import './CS465Feed.css';
-import src from '../FeedPage/preview.png';
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
 
-const classData = ['Extra Office Hours for the Midterm',
-                   'Why randomization improves QuickSort pivot selection?',
-                   'Is it just me or this course is getting too difficult?',
-                   'Why do we only care about Eigenvectors with Eigen value 1?'];
+const classData = ['What does UX even mean? Any good resources?',
+                   'More time for final project please',
+                   'This class has been very useful',
+                   'My UI sucks'];
 
 const GridLayout = () => (
   <Grid columns={2} verticalAlign='middle' container stackable >
-    <Grid.Row>
+    <Grid.Row >
       <Grid.Column width={9}>
             <Grid columns={1} textAlign='center' verticalAlign='middle'  >
             <Grid.Row>
@@ -23,7 +22,7 @@ const GridLayout = () => (
             </Grid.Row>
             <Grid.Row>
               <a href="http://localhost:3000/CS465feed">
-                <Button color="green">CS 465</Button>
+                <Button color="blue">CS 465</Button>
               </a>
               <a href="http://localhost:3000/CS498feed">
                 <Button color="blue">CS 498</Button>
@@ -36,19 +35,19 @@ const GridLayout = () => (
               </a>
             </Grid.Row>
              <Grid.Row>
-                <ClassDetails/>
+                <SurveyForm/>
             </Grid.Row>
             <Grid.Row >
                  <ThreadList/>
             </Grid.Row>
             <Grid.Row floated="right">
-                 <ClassDetailsFeedback/>
+                 <FeedbackForm/>
             </Grid.Row>
             </Grid>
         </Grid.Column>
-        <Grid.Column width={1}>
+    <Grid.Column width={1}>
     </Grid.Column>
-   <Grid.Column width={6} stretched >
+    <Grid.Column width={6} stretched >
        <EmbedExampleIframe/>
     </Grid.Column>
     </Grid.Row>
@@ -64,23 +63,6 @@ const EmbedExampleIframe = () => (
   />
 )
 
-class ClassDetails extends Component {
-  render() {
-    return(
-      <div>
-        <SurveyForm class="CS 465"/>
-      </div>)
-  }
-}
-
-class ClassDetailsFeedback extends Component {
-  render() {
-    return(
-      <div>
-        <FeedbackForm class="CS 465"/>
-      </div>)
-  }
-}
 
 class ParentProps extends Component {
 
@@ -123,7 +105,7 @@ const questions =  classData.map( (item, i) =>{
         } );
 
 const ThreadList = () => (
-  <List divided verticalAlign='middle' size='huge' style={{height:"350px",overflowY:"auto",overflowXx:"hidden"}} >
+  <List divided verticalAlign='middle' size='huge' style={{height:"350px",overflowY:"auto",overflowX:"hidden"}} >
         {questions}
     </List>
 )
@@ -136,7 +118,6 @@ class FeedPage extends Component {
     );
   }
 }
-
 
 class RangeLabel extends Component {
 
@@ -153,14 +134,27 @@ class RangeLabel extends Component {
 
   render(props) {
       if (this.state.resolved) {
-        return (<InstructorResponse color={this.state.color} />);
+        return ( <Popup
+              trigger={
+                <Button style={{backgroundColor: this.state.color}}>
+                </Button>}
+              content='This would be covered in the next lecture'
+              size='huge'
+            />);
       }
       else {
-        return (<Button style={{backgroundColor: this.state.color}}>
-      </Button>);
+        return ( <Popup
+              trigger={
+                <Button style={{backgroundColor: this.state.color}}>
+                </Button>}
+              content='Unresolved'
+              size='huge'
+            />);
       }
   }
 }
+
+
 
 
 class VoteButton extends Button {

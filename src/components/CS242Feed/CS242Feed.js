@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Button, List, Header } from 'semantic-ui-react'
-import { Card, Icon, Image, Label } from 'semantic-ui-react'
+import { Card, Icon, Image, Label, Popup } from 'semantic-ui-react'
 import SurveyForm from '../SurveyForm/SurveyForm';
 import InstructorResponse from '../InstructorResponse/InstructorResponse';
 
@@ -12,9 +12,10 @@ const classData = ['My grader has not completed grading Assignment1.0 yet',
                    'Is there a quiz today?',
                    'Is it just me or this course is getting too difficult?'];
 
+
 const GridLayout = () => (
   <Grid columns={2} verticalAlign='middle' container stackable >
-    <Grid.Row>
+    <Grid.Row >
       <Grid.Column width={9}>
             <Grid columns={1} textAlign='center' verticalAlign='middle'  >
             <Grid.Row>
@@ -31,21 +32,21 @@ const GridLayout = () => (
                 <Button color="blue">CS 357</Button>
               </a>
               <a href="http://localhost:3000/CS242feed">
-                <Button color="green">CS 242</Button>
+                <Button color="blue">CS 242</Button>
               </a>
             </Grid.Row>
              <Grid.Row>
-                <ClassDetails/>
+                <SurveyForm/>
             </Grid.Row>
             <Grid.Row >
                  <ThreadList/>
             </Grid.Row>
             <Grid.Row floated="right">
-                 <ClassDetailsFeedback/>
+                 <FeedbackForm/>
             </Grid.Row>
             </Grid>
         </Grid.Column>
-        <Grid.Column width={1}>
+    <Grid.Column width={1}>
     </Grid.Column>
     <Grid.Column width={6} stretched >
        <EmbedExampleIframe/>
@@ -63,23 +64,6 @@ const EmbedExampleIframe = () => (
   />
 )
 
-class ClassDetails extends Component {
-  render() {
-    return(
-      <div>
-        <SurveyForm class="CS 242"/>
-      </div>)
-  }
-}
-
-class ClassDetailsFeedback extends Component {
-  render() {
-    return(
-      <div>
-        <FeedbackForm class="CS 242"/>
-      </div>)
-  }
-}
 
 class ParentProps extends Component {
 
@@ -122,7 +106,7 @@ const questions =  classData.map( (item, i) =>{
         } );
 
 const ThreadList = () => (
-  <List divided verticalAlign='middle' size='huge' style={{height:"350px",overflowY:"auto",overflowXx:"hidden"}} >
+  <List divided verticalAlign='middle' size='huge' style={{height:"350px",overflowY:"auto",overflowX:"hidden"}} >
         {questions}
     </List>
 )
@@ -135,7 +119,6 @@ class FeedPage extends Component {
     );
   }
 }
-
 
 class RangeLabel extends Component {
 
@@ -152,14 +135,27 @@ class RangeLabel extends Component {
 
   render(props) {
       if (this.state.resolved) {
-        return (<InstructorResponse color={this.state.color} />);
+        return ( <Popup
+              trigger={
+                <Button style={{backgroundColor: this.state.color}}>
+                </Button>}
+              content='This would be covered in the next lecture'
+              size='huge'
+            />);
       }
       else {
-        return (<Button style={{backgroundColor: this.state.color}}>
-      </Button>);
+        return ( <Popup
+              trigger={
+                <Button style={{backgroundColor: this.state.color}}>
+                </Button>}
+              content='Unresolved'
+              size='huge'
+            />);
       }
   }
 }
+
+
 
 
 class VoteButton extends Button {
@@ -188,7 +184,7 @@ class VoteButton extends Button {
 
   render() {
     return(
-      <Button style={{backgroundColor:this.state.color}} onClick={() => this.onClick()}>
+      <Button toggle active={this.state.active} onClick={() => this.onClick()}>
         <Icon name='arrow up'/> {this.state.votes}
       </Button>
     );
