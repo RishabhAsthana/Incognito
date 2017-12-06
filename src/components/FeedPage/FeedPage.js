@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Grid, Button, List, Header } from 'semantic-ui-react'
+import { Grid, Button, List, Header, Embed } from 'semantic-ui-react'
 import { Card, Icon, Image, Label } from 'semantic-ui-react'
 import SurveyForm from '../SurveyForm/SurveyForm';
+import InstructorResponse from '../InstructorResponse/InstructorResponse';
 
 import './FeedPage.css';
 import src from './preview.png';
@@ -10,12 +11,18 @@ import FeedbackForm from '../FeedbackForm/FeedbackForm';
 const classData = ['Extra Office Hours for the Midterm',
                    'Why randomization improves QuickSort pivot selection?',
                    'Is it just me or this course is getting too difficult?',
+                   'Why randomization improves QuickSort pivot selection?',
+                   'Is it just me or this course is getting too difficult?',
+                   'Why randomization improves QuickSort pivot selection?',
+                   'Is it just me or this course is getting too difficult?',
+                   'Why randomization improves QuickSort pivot selection?',
+                   'Is it just me or this course is getting too difficult?',
                    'Why do we only care about Eigenvectors with Eigen value 1?'];
 
 const GridLayout = () => (
   <Grid columns={2} verticalAlign='middle' container stackable >
-    <Grid.Row>
-      <Grid.Column width={8}>
+    <Grid.Row >
+      <Grid.Column width={9}>
             <Grid columns={1} textAlign='center' verticalAlign='middle'  >
             <Grid.Row>
                     <Header size='huge'>Classes</Header>
@@ -45,12 +52,22 @@ const GridLayout = () => (
             </Grid.Row>
             </Grid>
         </Grid.Column>
-    <Grid.Column width={8} >
-       <ImageExampleImage/>
+    <Grid.Column width={1}>
+    </Grid.Column>
+    <Grid.Column width={6} stretched >
+       <EmbedExampleIframe/>
     </Grid.Column>
     </Grid.Row>
     
   </Grid>
+)
+
+const EmbedExampleIframe = () => (
+  <iframe
+    className = 'ch'
+    style={{overflow: "hidden"}}
+    src='http://localhost:3000/graph.html'
+  />
 )
 
 const ImageExampleImage = () => (
@@ -98,7 +115,7 @@ const questions =  classData.map( (item, i) =>{
         } );
 
 const ThreadList = () => (
-  <List divided verticalAlign='middle' size='huge' style={{height:"350px",overflowY:"auto",overflowXx:"hidden"}} >
+  <List divided verticalAlign='middle' size='huge' style={{height:"350px",overflowY:"auto",overflowX:"hidden"}} >
         {questions}
     </List>
 )
@@ -126,11 +143,14 @@ class RangeLabel extends Component {
     }
   }
 
-  render() {
-    return(
-      <Label style={{backgroundColor: this.state.color}}>
-      </Label>
-    );
+    render(props) {
+      if (this.state.resolved) {
+        return (<InstructorResponse color={this.state.color} />);
+      }
+      else {
+        return (<Button style={{backgroundColor: this.state.color}}>
+      </Button>);
+      }
   }
 }
 
@@ -161,7 +181,7 @@ class VoteButton extends Button {
 
   render() {
     return(
-      <Button style={{backgroundColor:this.state.color}} onClick={() => this.onClick()}>
+      <Button toggle active={this.state.active} onClick={() => this.onClick()}>
         <Icon name='arrow up'/> {this.state.votes}
       </Button>
     );

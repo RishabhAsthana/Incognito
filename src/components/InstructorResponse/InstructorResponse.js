@@ -27,15 +27,13 @@ class InstructorResponse extends Component {
       
       <Modal.Description>
         <Header>{this.state.class}</Header>
-       <Form>
+        <Form>
         <Grid columns={1} container centered>
-                        <Grid.Row stretched>
-
-        <label > <h4> This will be discussed in Lecture on 12/11 </h4> </label>
+            <Grid.Row stretched>
+                <label > <h4> This will be discussed in Lecture on 12/11 </h4> </label>
             </Grid.Row>
-
         </Grid>
-          </Form>        
+        </Form>        
       </Modal.Description>
     </Modal.Content>
   </Modal>     

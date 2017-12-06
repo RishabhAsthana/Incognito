@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Button, Checkbox, Form, Container, Radio, Grid, Modal, Image, Header, Segment, TextArea, Input } from 'semantic-ui-react'
+import { Icon, Button, Checkbox, Form, Container, Radio, Grid, Modal, Image, Header, Segment, TextArea, Input, Label } from 'semantic-ui-react'
 import logo from './logo.svg';
 import './FeedbackForm.css';
 import SurveyForm from '../SurveyForm/SurveyForm';
@@ -22,8 +22,8 @@ class FeedbackForm extends Component {
     render() {
     return (
         <Modal trigger={ 
-            <Button icon circular color="green" onClick={this.handleOpen}>
-                <Icon name='add circle'/>
+            <Button positive onClick={this.handleOpen}>
+                Add Feedback
             </Button>
             } 
             size='large'
@@ -41,11 +41,13 @@ class FeedbackForm extends Component {
         <Grid columns={1} container centered>
             
         <Grid.Row stretched>
-            <Form.Field id='form-input-control-first-name' width={14} control={Input} label='Summary' placeholder='Summary' />
+            <h4 style={{padding:'1em',paddingTop:'0.6em'}}>Summary:</h4>
+            <Form.Field id='form-input-control-first-name' width={14} control={Input} placeholder='Summary' />
         </Grid.Row>
         
         <Grid.Row stretched>  
-            <Form.Field id='form-textarea-control-opinion' width={14} control={TextArea} label='Details'    placeholder='Details' />
+            <h4 style={{padding:'1em',paddingTop:'0.6em'}}>Details:</h4>
+            <Form.Field id='form-textarea-control-opinion' width={14} control={TextArea} placeholder='Details' />
         </Grid.Row>
 
         </Grid>

@@ -183,7 +183,7 @@ class VoteButton extends Button {
 
   render() {
     return(
-      <Button style={{backgroundColor:this.state.color}} onClick={() => this.onClick()}>
+      <Button toggle active={this.state.active} onClick={() => this.onClick()}>
         <Icon name='arrow up'/> {this.state.votes}
       </Button>
     );
