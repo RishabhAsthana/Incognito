@@ -54,6 +54,7 @@ class FeedbackForm extends Component {
             <Grid>
                 <Grid.Column>
                     <Button  primary floated='right' type='submit' onClick={() => this.submitForm()}>Submit</Button>
+                    <Button  negative floated='right' type='submit' onClick={() => this.submitForm()}>Cancel</Button>
                 </Grid.Column>
             </Grid>
         </Form>        
