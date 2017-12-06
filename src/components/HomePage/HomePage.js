@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Button, List, Header } from 'semantic-ui-react'
-import { Card, Icon, Image, Label } from 'semantic-ui-react'
+import { Card, Icon, Image, Label, Popup } from 'semantic-ui-react'
 
 import './HomePage.css';
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
@@ -158,19 +158,33 @@ class RangeLabel extends Component {
   constructor(props) {
     super();
     if (props.resolved) {
-      this.state = {color: 'rgba(0,255,0,1)'}
+      this.state = {color: 'rgba(0,255,0,1)', resolved: true}
     }
     else {
       var colorWeight = props.votes*0.01
-      this.state = {color: 'rgba(255,0,0,' + colorWeight + ')'}
+      this.state = {color: 'rgba(255,0,0,' + colorWeight + ')', resolved: false}
     }
   }
 
-  render() {
-    return(
-      <Label style={{backgroundColor: this.state.color}}>
-      </Label>
-    );
+  render(props) {
+      if (this.state.resolved) {
+        return ( <Popup
+              trigger={
+                <Button style={{backgroundColor: this.state.color}}>
+                </Button>}
+              content='This would be covered in the next lecture'
+              size='huge'
+            />);
+      }
+      else {
+        return ( <Popup
+              trigger={
+                <Button style={{backgroundColor: this.state.color}}>
+                </Button>}
+              content='Unresolved'
+              size='huge'
+            />);
+      }
   }
 }
 
@@ -201,7 +215,7 @@ class VoteButton extends Button {
 
   render() {
     return(
-      <Button style={{backgroundColor:this.state.color}} onClick={() => this.onClick()}>
+      <Button toggle active={this.state.active} onClick={() => this.onClick()}>
         <Icon name='arrow up'/> {this.state.votes}
       </Button>
     );
