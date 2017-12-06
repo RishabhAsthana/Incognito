@@ -1,0 +1,17 @@
+{
+    "nodes": [
+        {"id": "Classes", "r": 20, "group": 1},
+        {"id": "CS 498", "r": 15, "group": 2},
+        {"id": "CS 498 Question 1", "r": 10, "group": 3},
+        {"id": "CS 498 Question 2", "r": 10, "group": 3},
+        {"id": "CS 498 Question 3", "r": 10, "group": 6},
+        {"id": "CS 498 Question 4", "r": 10, "group": 7}
+    ],
+    "links": [
+        {"source": "Classes", "target": "CS 498", "value": 8},
+        {"source": "CS 498", "target": "CS 498 Question 1", "value": 1},
+        {"source": "CS 498", "target": "CS 498 Question 2", "value": 1},
+        {"source": "CS 498", "target": "CS 498 Question 3", "value": 1},
+        {"source": "CS 498", "target": "CS 498 Question 4", "value": 1}
+    ]
+}

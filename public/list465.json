@@ -1,0 +1,17 @@
+{
+    "nodes": [
+        {"id": "Classes", "r": 20, "group": 1},
+        {"id": "CS 465", "r": 15, "group": 2},
+        {"id": "CS 465 Question 1", "r": 10, "group": 3},
+        {"id": "CS 465 Question 2", "r": 10, "group": 3},
+        {"id": "CS 465 Question 3", "r": 10, "group": 4},
+        {"id": "CS 465 Question 4", "r": 10, "group": 5}
+    ],
+    "links": [
+        {"source": "Classes", "target": "CS 465", "value": 8},
+        {"source": "CS 465", "target": "CS 465 Question 1", "value": 1},
+        {"source": "CS 465", "target": "CS 465 Question 2", "value": 1},
+        {"source": "CS 465", "target": "CS 465 Question 3", "value": 1},
+        {"source": "CS 465", "target": "CS 465 Question 4", "value": 1}
+    ]
+}

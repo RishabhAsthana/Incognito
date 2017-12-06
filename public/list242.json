@@ -1,0 +1,15 @@
+{
+    "nodes": [
+        {"id": "Classes", "r": 20, "group": 1},
+        {"id": "CS 242", "r": 15, "group": 2},
+        {"id": "CS 242 Question 1", "r": 10, "group": 11},
+        {"id": "CS 242 Question 2", "r": 10, "group": 12},
+        {"id": "CS 242 Question 3", "r": 10, "group": 3}
+    ],
+    "links": [
+        {"source": "Classes", "target": "CS 242", "value": 8},
+        {"source": "CS 242", "target": "CS 242 Question 1", "value": 1},
+        {"source": "CS 242", "target": "CS 242 Question 2", "value": 1},
+        {"source": "CS 242", "target": "CS 242 Question 3", "value": 1}
+    ]
+}
