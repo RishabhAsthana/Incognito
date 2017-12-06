@@ -49,7 +49,7 @@ class SurveyForm extends Component {
     return (
     <Modal 
     trigger={<Button onClick={this.handleOpen} color="yellow">Survey Request</Button>} 
-    size='large' 
+    size='small' 
     dimmer='blurring' 
     open = {this.state.modalOpen}
     closeOnRootNodeClick={false}

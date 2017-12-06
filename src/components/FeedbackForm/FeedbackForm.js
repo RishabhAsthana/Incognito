@@ -26,7 +26,7 @@ class FeedbackForm extends Component {
                 Add Feedback
             </Button>
             } 
-            size='large'
+            size='small'
             dimmer='blurring'
             closeOnRootNodeClick={false}
             open = {this.state.modalOpen}
@@ -42,12 +42,12 @@ class FeedbackForm extends Component {
             
         <Grid.Row stretched>
             <h4 style={{padding:'1em',paddingTop:'0.6em'}}>Summary:</h4>
-            <Form.Field id='form-input-control-first-name' width={14} control={Input} placeholder='Summary' />
+            <Form.Field id='form-input-control-first-name' width={13} control={Input} placeholder='Summary' />
         </Grid.Row>
         
         <Grid.Row stretched>  
             <h4 style={{padding:'1em',paddingTop:'0.6em'}}>Details:</h4>
-            <Form.Field id='form-textarea-control-opinion' width={14} control={TextArea} placeholder='Details' />
+            <Form.Field id='form-textarea-control-opinion' width={13} control={TextArea} placeholder='Details' />
         </Grid.Row>
 
         </Grid>

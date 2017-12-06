@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Button, List, Header, Embed } from 'semantic-ui-react'
+import { Grid, Button, List, Header, Embed, Popup } from 'semantic-ui-react'
 import { Card, Icon, Image, Label } from 'semantic-ui-react'
 import SurveyForm from '../SurveyForm/SurveyForm';
 import InstructorResponse from '../InstructorResponse/InstructorResponse';
@@ -129,30 +129,42 @@ class FeedPage extends Component {
   }
 }
 
-
 class RangeLabel extends Component {
 
   constructor(props) {
     super();
     if (props.resolved) {
-      this.state = {color: 'rgba(0,255,0,1)'}
+      this.state = {color: 'rgba(0,255,0,1)', resolved: true}
     }
     else {
       var colorWeight = props.votes*0.01
-      this.state = {color: 'rgba(255,0,0,' + colorWeight + ')'}
+      this.state = {color: 'rgba(255,0,0,' + colorWeight + ')', resolved: false}
     }
   }
 
-    render(props) {
+  render(props) {
       if (this.state.resolved) {
-        return (<InstructorResponse color={this.state.color} />);
+        return ( <Popup
+              trigger={
+                <Button style={{backgroundColor: this.state.color}}>
+                </Button>}
+              content='This would be covered in the next lecture'
+              size='huge'
+            />);
       }
       else {
-        return (<Button style={{backgroundColor: this.state.color}}>
-      </Button>);
+        return ( <Popup
+              trigger={
+                <Button style={{backgroundColor: this.state.color}}>
+                </Button>}
+              content='Unresolved'
+              size='huge'
+            />);
       }
   }
 }
+
+
 
 
 class VoteButton extends Button {
