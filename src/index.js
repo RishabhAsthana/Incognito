@@ -13,7 +13,9 @@ import CS465Feed from './components/CS465Feed/CS465Feed';
 import CS498Feed from './components/CS498Feed/CS498Feed';
 import CS357Feed from './components/CS357Feed/CS357Feed';
 import CS242Feed from './components/CS242Feed/CS242Feed';
-
+import CS242Statistics from './components/CS242Statistics/CS242Statistics';
+import CS357Statistics from './components/CS357Statistics/CS357Statistics';
+import CS498Statistics from './components/CS498Statistics/CS498Statistics';
 
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import registerServiceWorker from './registerServiceWorker';
@@ -33,7 +35,9 @@ const App = () => {
             <Route path="/CS498feed" component={CS498Feed}></Route>
             <Route path="/CS357feed" component={CS357Feed}></Route>
             <Route path="/CS242feed" component={CS242Feed}></Route>
-        
+			<Route path="/CS242statistics" component={CS242Statistics}></Route>
+			<Route path="/CS357statistics" component={CS357Statistics}></Route>
+			<Route path="/CS498statistics" component={CS498Statistics}></Route>
         </div>
     </Router>
     )

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Pie, Chart} from 'react-chartjs-2';
 import { Grid, Button, List, Header } from 'semantic-ui-react'
-import './StatisticsPage.css';
+import './CS242Statistics.css';
 
 const GridLayout = () => (
   <Grid columns={3} verticalAlign='middle' container stackable >
@@ -32,7 +32,7 @@ const GridLayout = () => (
 		<Grid.Column width={5}>
                   <Grid columns={1} textAlign='center' verticalAlign='middle'  >
             <Grid.Row>
-                    <Header size='huge'>CS 465</Header>
+                    <Header size='huge'>CS 242</Header>
 
             </Grid.Row>
 			</Grid>
@@ -130,7 +130,7 @@ const oneData = {
 		'Very Hard'
 	],
 	datasets: [{
-		data: [10, 15, 30, 10, 20],
+		data: [10, 10, 20, 10, 30],
 		backgroundColor: [
 		'#E38627',
 		'#97101E',
@@ -150,7 +150,7 @@ const twoData = {
 		'Very Hard'
 	],
 	datasets: [{
-		data: [40, 10, 17, 21, 15],
+		data: [18, 23, 17, 16, 27],
 		backgroundColor: [
 		'#E38627',
 		'#97101E',
@@ -169,7 +169,7 @@ const threeData = {
 		'Very Useful'
 		],
 	datasets: [{
-		data: [30, 30, 20, 20],
+		data: [10, 15, 14, 20],
 		backgroundColor: [
 		'#97101E',
 		'#18EFEA',
@@ -188,7 +188,7 @@ const fourData = {
 		'F'
 	],
 	datasets: [{
-		data: [5, 30, 20, 10, 15],
+		data: [10, 20, 20, 15, 15],
 		backgroundColor: [
 		'#E38627',
 		'#97101E',
@@ -208,7 +208,7 @@ const fiveData = {
 		'F'
 	],
 	datasets: [{
-		data: [20, 25, 45, 15, 10],
+		data: [34, 25, 30, 20, 20],
 		backgroundColor: [
 		'#E38627',
 		'#97101E',
@@ -227,7 +227,7 @@ const sixData = {
 		'Very Useful'
 		],
 	datasets: [{
-		data: [40, 10, 20, 20],
+		data: [40, 30, 20, 30],
 		backgroundColor: [
 		'#97101E',
 		'#18EFEA',
